@@ -1,0 +1,53 @@
+[
+    {
+        "id" : 1,
+        "name" : "Torus",
+        "img" : "./img/torus.png"
+    },
+    {
+        "id" : 2,
+        "name" : "Cone",
+        "img" : "./img/cone.jpeg"
+    },
+    {
+        "id" : 3,
+        "name" : "Dodecahedron",
+        "img" : "./img/dodecahedron.jpeg"
+    },
+    {
+        "id" : 4,
+        "name" : "Tetrahedron",
+        "img" : "./img/tetrahedron.jpeg"
+    },
+    {
+        "id" : 5,
+        "name" : "Icosahedron",
+        "img" : "./img/icosahedron.jpeg"
+    },
+    {
+        "id" : 6,
+        "name" : "Octahedron",
+        "img" : "./img/octahedron.jpeg"
+    },
+    {
+        "id" : 7,
+        "name" : "Ellispoid",
+        "img" : "./img/ellipsoid.jpeg"
+    },
+    {
+        "id" : 8,
+        "name" : "Hexagonal Pyramid",
+        "img" : "./img/hexagonal-pyramid.jpeg"
+    },
+    {
+        "id" : 9,
+        "name" : "Hemisphere",
+        "img" : "./img/hemisphere.jpeg"
+    },
+    {
+        "id" : 10,
+        "name" : "Rhombicuboctahedron",
+        "img" : "./img/rhombicuboctahedron.jpeg"
+    }
+
+]
