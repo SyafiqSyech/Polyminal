@@ -14,7 +14,7 @@ const ShapeCard = (props: { data: { id: any; name: any; img: any }; }) => {
     const {id, name, img} = props.data;
 
     return (
-        <div className="shadow-lg rounded-lg justify-item-center p-5" key={id}>
+        <div className="bg-slate-600 shadow-2xl rounded-lg justify-item-center p-5" key={id}>
             <img className="border border-black p-5" src={img} alt="" />
             <h5 className="p-3 text-xl font-bold flex justify-center">{name}</h5>
         </div>

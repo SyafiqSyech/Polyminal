@@ -11,8 +11,8 @@ function App() {
 
   return (
     <>
-      <main className="container mx-auto py-38 px-8">
-        <div className="grid lg:grid-cols-5 gap-6">
+      <main className="container mx-auto py-8 px-8 mt-6">
+        <div className="grid gridcont justify-center gap-6">
           {shapes.map((shape) => (
             // <div className="shadow-lg rounded-lg justify-item-center p-5" key={shape.id}>
             //   <img className="border border-black p-5" src={shape.img} alt="" />
