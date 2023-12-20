@@ -1,44 +1,93 @@
-import React from 'react';
-import { useParams } from 'react-router-dom';
-import shapes from '../shapes.json';
+import React, { Suspense } from "react";
+import { useParams } from "react-router-dom";
+import shapes from "../shapes.json";
+import { Canvas } from "@react-three/fiber";
+import { TrackballControls, useGLTF } from "@react-three/drei";
 
 const ShapeDetail = () => {
-//   const { id } = useParams<{ id: string }>();
-//   const shape = shapes.find((s) => s.id.toString() === id);
+  //   const { id } = useParams<{ id: string }>();
+  //   const shape = shapes.find((s) => s.id.toString() === id);
 
-//   if (!shape) {
-//     return <div>Shape not found</div>;
-//   }
-    // Retrieve the shape ID from the URL parameters
-    const { id } = useParams<{ id: string }>();
-    const shape = shapes.find((s) => s.id.toString() === id);
+  //   if (!shape) {
+  //     return <div>Shape not found</div>;
+  //   }
+  // Retrieve the shape ID from the URL parameters
+  const { id } = useParams<{ id: string }>();
+  const shape = shapes.find((s) => s.id.toString() === id);
 
-    if (!shape) {
-        return <div>Shape not found</div>;
-    }
+  if (!shape) {
+    return <div>Shape not found</div>;
+  }
 
-    const { name, img } = shape;
+  const { name, img } = shape;
+
+  function ThreeScene() {
+    return (
+      <Canvas camera={{ position: [2, 2, 2] }}>
+        <Suspense fallback={null}>
+          <TrackballControls />
+          <Model customColors={{ mesh: "red" }} />
+        </Suspense>
+      </Canvas>
+    );
+  }
+
+  function Model(props) {
+    // const group = useRef();
+    const { nodes, materials } = useGLTF("/model/torus.gltf");
+    return (
+      <group {...props} dispose={null}>
+        <mesh
+          geometry={nodes.Torus.geometry}
+          // material={materials["Material.004"]}
+          material-color={props.customColors.mesh}
+        />
+      </group>
+    );
+  }
 
   return (
     // Your existing ShapeDetail component code
     // Use the 'shape' object to display details
     <section>
-        <div className="grid grid-cols-2 gap-6 p-10">
-            <img src={`/img/${img}`} alt={`Image of ${name}`} className="border md:he"/>
-            <div>
-                <h1 className="font-bold">{name}</h1>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus ipsum
-                    rerum facilis sit a fugit, voluptatem iste quasi quisquam voluptatum!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus ipsum
-                    rerum facilis sit a fugit, voluptatem iste quasi quisquam voluptatum!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus ipsum
-                    rerum facilis sit a fugit, voluptatem iste quasi quisquam voluptatum!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus ipsum
-                    rerum facilis sit a fugit, voluptatem iste quasi quisquam voluptatum!</p>
-                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus ipsum
-                    rerum facilis sit a fugit, voluptatem iste quasi quisquam voluptatum!</p>
-            </div>
+      <div className="grid grid-cols-2 gap-6 p-10">
+        <img
+          src={`/img/${img}`}
+          alt={`Image of ${name}`}
+          className="border md:he"
+        />
+        <div>
+          <h1 className="font-bold">{name}</h1>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
         </div>
+      </div>
+      <div className="App canvas">
+        <ThreeScene />
+      </div>
     </section>
   );
 };
@@ -77,4 +126,4 @@ const ShapeDetail = () => {
 //   )
 // }
 
-export default ShapeDetail
+export default ShapeDetail;

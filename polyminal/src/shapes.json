@@ -2,17 +2,20 @@
     {
         "id" : 1,
         "name" : "Torus",
-        "img" : "torus.png"
+        "img" : "torus.png",
+        "model" : "torus.gltf"
     },
     {
         "id" : 2,
         "name" : "Cone",
-        "img" : "cone.jpeg"
+        "img" : "cone.jpeg",
+        "model" : "/model/cone.gltf"
     },
     {
         "id" : 3,
         "name" : "Dodecahedron",
-        "img" : "dodecahedron.jpeg"
+        "img" : "dodecahedron.jpeg",
+        "model" : "/model/deodecahedron.gltf"
     },
     {
         "id" : 4,
@@ -31,7 +34,7 @@
     },
     {
         "id" : 7,
-        "name" : "Ellispoid",
+        "name" : "Ellipsoid",
         "img" : "ellipsoid.jpeg"
     },
     {
