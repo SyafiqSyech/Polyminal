@@ -9,48 +9,55 @@
         "id" : 2,
         "name" : "Cone",
         "img" : "cone.jpeg",
-        "model" : "/model/cone.gltf"
+        "model" : "cone.gltf"
     },
     {
         "id" : 3,
         "name" : "Dodecahedron",
         "img" : "dodecahedron.jpeg",
-        "model" : "/model/deodecahedron.gltf"
+        "model" : "dodecahedron.gltf"
     },
     {
         "id" : 4,
         "name" : "Tetrahedron",
-        "img" : "tetrahedron.jpeg"
+        "img" : "tetrahedron.jpeg",
+        "model" : "tetrahedron.gltf"
     },
     {
         "id" : 5,
         "name" : "Icosahedron",
-        "img" : "icosahedron.jpeg"
+        "img" : "icosahedron.jpeg",
+        "model" : "icosahedron.gltf"
     },
     {
         "id" : 6,
         "name" : "Octahedron",
-        "img" : "octahedron.jpeg"
+        "img" : "octahedron.jpeg",
+        "model" : "octahedron.gltf"
     },
     {
         "id" : 7,
         "name" : "Ellipsoid",
-        "img" : "ellipsoid.jpeg"
+        "img" : "ellipsoid.jpeg",
+        "model" : "ellipsoid.gltf"
     },
     {
         "id" : 8,
         "name" : "Hexagonal Pyramid",
-        "img" : "hexagonal-pyramid.jpeg"
+        "img" : "hexagonal-pyramid.jpeg",
+        "model" : "hexagonal_pyramid.gltf"
     },
     {
         "id" : 9,
         "name" : "Hemisphere",
-        "img" : "hemisphere.jpeg"
+        "img" : "hemisphere.jpeg",
+        "model" : "hemisphere.gltf"
     },
     {
         "id" : 10,
         "name" : "Rhombicuboctahedron",
-        "img" : "rhombicuboctahedron.jpeg"
+        "img" : "rhombicuboctahedron.jpeg",
+        "model" : "rhombicuboctahedron.gltf"
     }
 
 ]

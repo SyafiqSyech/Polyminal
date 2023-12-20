@@ -4,6 +4,20 @@ import shapes from "../shapes.json";
 import { Canvas } from "@react-three/fiber";
 import { TrackballControls, useGLTF } from "@react-three/drei";
 
+function Model(props) {
+  const { nodes } = useGLTF(props.modelPath);
+  return (
+      <group {...props} dispose={null}>
+          {nodes && nodes[props.shapeName] && nodes[props.shapeName].geometry && (
+              <mesh
+                  geometry={nodes[props.shapeName].geometry}
+                  material-color={props.customColors.mesh}
+              />
+          )}
+      </group>
+  );
+}
+
 const ShapeDetail = () => {
   //   const { id } = useParams<{ id: string }>();
   //   const shape = shapes.find((s) => s.id.toString() === id);
@@ -19,37 +33,55 @@ const ShapeDetail = () => {
     return <div>Shape not found</div>;
   }
 
-  const { name, img } = shape;
+  const { name, img, model } = shape;
 
   function ThreeScene() {
     return (
-      <Canvas camera={{ position: [2, 2, 2] }}>
-        <Suspense fallback={null}>
-          <TrackballControls />
-          <Model customColors={{ mesh: "red" }} />
-        </Suspense>
-      </Canvas>
+        <Canvas camera={{ position: [2, 2, 2] }}>
+            <Suspense fallback={null}>
+                <TrackballControls />
+                <Model
+                    modelPath={`/model/${model}`}
+                    shapeName={name}
+                    customColors={{ mesh: 'red' }}
+                />
+            </Suspense>
+        </Canvas>
     );
   }
 
-  function Model(props) {
-    // const group = useRef();
-    const { nodes, materials } = useGLTF("/model/torus.gltf");
-    return (
-      <group {...props} dispose={null}>
-        <mesh
-          geometry={nodes.Torus.geometry}
-          // material={materials["Material.004"]}
-          material-color={props.customColors.mesh}
-        />
-      </group>
-    );
-  }
+  // function ThreeScene() {
+  //   return (
+  //     <Canvas camera={{ position: [2, 2, 2] }}>
+  //       <Suspense fallback={null}>
+  //         <TrackballControls />
+  //         <Model customColors={{ mesh: "red" }} />
+  //       </Suspense>
+  //     </Canvas>
+  //   );
+  // }
+
+  // function Model(props) {
+  //   // const group = useRef();
+  //   const { nodes, materials } = useGLTF("/model/cone.gltf");
+  //   return (
+  //     <group {...props} dispose={null}>
+  //       <mesh
+  //         geometry={nodes.Cone.geometry}
+  //         // material={materials["Material.004"]}
+  //         material-color={props.customColors.mesh}
+  //       />
+  //     </group>
+  //   );
+  // }
 
   return (
     // Your existing ShapeDetail component code
     // Use the 'shape' object to display details
     <section>
+      <div className="App canvas">
+        <ThreeScene />
+      </div>
       <div className="grid grid-cols-2 gap-6 p-10">
         <img
           src={`/img/${img}`}
@@ -84,9 +116,6 @@ const ShapeDetail = () => {
             voluptatum!
           </p>
         </div>
-      </div>
-      <div className="App canvas">
-        <ThreeScene />
       </div>
     </section>
   );
