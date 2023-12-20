@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom';
 
 // function ShapeCard() {
 //   return (
@@ -12,10 +13,19 @@ import React from 'react'
 
 const ShapeCard = (props: { data: { id: any; name: any; img: any }; }) => {
     const {id, name, img} = props.data;
+    const navigate = useNavigate();
+
+    const handleClick = () => {
+        navigate(`/ShapeDetail/${id}`);
+      };
 
     return (
-        <div className="bg-slate-600 shadow-2xl rounded-lg justify-item-center p-5 cursor-pointer" key={id} onClick={() => {window.location.href='/ShapeDetail'}}>
-            <img className="border border-black p-5" src={img} alt="" />
+        <div 
+            className="bg-slate-600 shadow-2xl rounded-lg justify-item-center p-5 cursor-pointer" 
+            // key={id}
+            // () => {window.location.href='/ShapeDetail'}
+            onClick={handleClick}>
+            <img className="border border-black p-5" src={`/img/${img}`} alt="" />
             <h5 className="p-3 text-xl font-bold flex justify-center">{name}</h5>
         </div>
     )

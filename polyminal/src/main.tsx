@@ -15,7 +15,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/ShapeDetail",
+    path: "/ShapeDetail/:id",
     element: <ShapeDetail />,
   },
 ]);

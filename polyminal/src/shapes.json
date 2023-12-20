@@ -2,52 +2,52 @@
     {
         "id" : 1,
         "name" : "Torus",
-        "img" : "public/img/torus.png"
+        "img" : "torus.png"
     },
     {
         "id" : 2,
         "name" : "Cone",
-        "img" : "public/img/cone.jpeg"
+        "img" : "cone.jpeg"
     },
     {
         "id" : 3,
         "name" : "Dodecahedron",
-        "img" : "public/img/dodecahedron.jpeg"
+        "img" : "dodecahedron.jpeg"
     },
     {
         "id" : 4,
         "name" : "Tetrahedron",
-        "img" : "public/img/tetrahedron.jpeg"
+        "img" : "tetrahedron.jpeg"
     },
     {
         "id" : 5,
         "name" : "Icosahedron",
-        "img" : "public/img/icosahedron.jpeg"
+        "img" : "icosahedron.jpeg"
     },
     {
         "id" : 6,
         "name" : "Octahedron",
-        "img" : "public/img/octahedron.jpeg"
+        "img" : "octahedron.jpeg"
     },
     {
         "id" : 7,
         "name" : "Ellispoid",
-        "img" : "public/img/ellipsoid.jpeg"
+        "img" : "ellipsoid.jpeg"
     },
     {
         "id" : 8,
         "name" : "Hexagonal Pyramid",
-        "img" : "public/img/hexagonal-pyramid.jpeg"
+        "img" : "hexagonal-pyramid.jpeg"
     },
     {
         "id" : 9,
         "name" : "Hemisphere",
-        "img" : "public/img/hemisphere.jpeg"
+        "img" : "hemisphere.jpeg"
     },
     {
         "id" : 10,
         "name" : "Rhombicuboctahedron",
-        "img" : "public/img/rhombicuboctahedron.jpeg"
+        "img" : "rhombicuboctahedron.jpeg"
     }
 
 ]
