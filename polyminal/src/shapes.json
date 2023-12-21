@@ -3,61 +3,77 @@
         "id" : 1,
         "name" : "Torus",
         "img" : "torus.png",
-        "model" : "torus.gltf"
+        "model" : "torus.gltf",
+        "funfact" : "The torus is a geometric shape resembling a donut with a hole in the center. It emerges from the rotation of a circle around an axis outside its plane. This doughnut-like form showcases a continuous, unbroken surface, embodying notions of wholeness and cyclicality in its elegant design.",
+        "symbol" : "-",
+        "faces" : "infinite",
+        "edges" : "infinite",
+        "vertices" : "infinite"
     },
     {
         "id" : 2,
         "name" : "Cone",
         "img" : "cone.jpeg",
-        "model" : "cone.gltf"
+        "model" : "cone.gltf",
+        "funfact" : "The cone is a three-dimensional geometric figure characterized by a flat circular base and a pointed apex. Its tapered structure symbolizes ascension and convergence, as lines extending from the apex to the base create a sense of directionality. Cones often embody notions of growth, reaching towards a pinnacle or singularity in their geometry.",
+        "symbol" : "-",
+        "faces" : 2,
+        "edges" : "infinite",
+        "vertices" : 1 
     },
     {
         "id" : 3,
         "name" : "Dodecahedron",
         "img" : "dodecahedron.jpeg",
-        "model" : "dodecahedron.gltf"
+        "model" : "dodecahedron.gltf",
+        "funfact" : "The dodecahedron features twelve regular pentagonal faces, symbolizing completeness and cosmic order. Its intricate design suggests a profound connection to mathematical beauty and the inherent structure of the universe.",
+        "symbol" : "{5, 3}",
+        "faces" : 12,
+        "edges" : 30,
+        "vertices" : 20
     },
     {
         "id" : 4,
         "name" : "Tetrahedron",
         "img" : "tetrahedron.jpeg",
-        "model" : "tetrahedron.gltf"
+        "model" : "tetra.gltf",
+        "funfact" : "The tetrahedron is the simplest of the Platonic solids, characterized by four equilateral triangular faces meeting at each vertex. Its symmetrical nature reflects balance and unity, making it a fundamental geometric form.",
+        "symbol" : "{3, 3}",
+        "faces" : 4,
+        "edges" : 6,
+        "vertices" : 4 
     },
     {
         "id" : 5,
         "name" : "Icosahedron",
         "img" : "icosahedron.jpeg",
-        "model" : "icosahedron.gltf"
+        "model" : "icosa.gltf",
+        "funfact" : "Defined by twenty equilateral triangular faces, the icosahedron demonstrates a dynamic and fluid geometry. Its twenty vertices contribute to its versatility, representing the interconnectedness and adaptability found in natural forms.",
+        "symbol" : "{3, 5}",
+        "faces" : 20,
+        "edges" : 30,
+        "vertices" : 12 
     },
     {
         "id" : 6,
         "name" : "Octahedron",
         "img" : "octahedron.jpeg",
-        "model" : "octahedron.gltf"
+        "model" : "octa.gltf",
+        "funfact" : "Comprising eight equilateral triangular faces meeting at each vertex, the octahedron embodies symmetry and harmony. Its name stems from the Greek word \"octa,\" highlighting its eight-fold symmetry and balanced structure.",
+        "symbol" : "{3, 4}",
+        "faces" : 8,
+        "edges" : 12,
+        "vertices" : 6
     },
     {
         "id" : 7,
-        "name" : "Ellipsoid",
-        "img" : "ellipsoid.jpeg",
-        "model" : "ellipsoid.gltf"
-    },
-    {
-        "id" : 8,
-        "name" : "Hexagonal Pyramid",
-        "img" : "hexagonal-pyramid.jpeg",
-        "model" : "hexagonal_pyramid.gltf"
-    },
-    {
-        "id" : 9,
-        "name" : "Hemisphere",
-        "img" : "hemisphere.jpeg",
-        "model" : "hemisphere.gltf"
-    },
-    {
-        "id" : 10,
-        "name" : "Rhombicuboctahedron",
-        "img" : "rhombicuboctahedron.jpeg",
-        "model" : "rhombicuboctahedron.gltf"
+        "name" : "Hexahedron",
+        "img" : "octahedron.jpeg",
+        "model" : "hexa.gltf",
+        "funfact" : "The cube, or hexahedron, boasts six equal square faces, forming right angles at their intersections. Renowned for its stability and regularity, the cube represents solidity and order within its geometric composition.",
+        "symbol" : "{4, 3}",
+        "faces" : 6,
+        "edges" : 12,
+        "vertices" : 8
     }
-
 ]

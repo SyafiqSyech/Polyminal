@@ -63,10 +63,7 @@ const Home = () => {
       <div className="h-screen relative">
         <p className="title titleBlur">POLYMINAL</p>
         <p className="title">POLYMINAL</p>
-        <p className="title titleBorder z-10 notouch">
-          POLYMINAL
-          {/* <div className="titleHover"></div> */}
-        </p>
+        <p className="title titleBorder z-10 notouch">POLYMINAL</p>
       </div>
       <div className="h-screen mb-96 w-full flex justify-center items-center">
         <p className="z-10 h-fit w-96 pointer-events-none text-justify notouch">

@@ -79,7 +79,7 @@ const ShapeDetail = () => {
     return <div>Shape not found</div>;
   }
 
-  const { name, img, model } = shape;
+  const { name, model, faces, edges, vertices, symbol, funfact  } = shape;
 
   function ThreeScene() {
     return (
@@ -163,21 +163,18 @@ const ShapeDetail = () => {
         <div className="h-screen z-10 flex items-center relative pointer-events-none notouch">
           <div className="grid grid-cols-2 gap-x-5 pl-12">
             <p>Faces</p>
-            <p>Faces</p>
+            <p>{faces}</p>
             <p>Edges</p>
-            <p>Edges</p>
+            <p>{edges}</p>
             <p>Vertices</p>
-            <p>Vertices</p>
+            <p>{vertices}</p>
             <p>Schläfli symbol</p>
-            <p>Schläfli symbol</p>
+            <p>{symbol}</p>
           </div>
         </div>
         <div className="h-screen w-full flex justify-center items-center">
           <p className="z-10 h-fit w-[32rem] pointer-events-none text-justify notouch">
-            ini quote keren tentang polyminal yang keren. karena polyminal itu
-            keren. Btw thanks matt udh ngerjain project labnya. Lorem ipsum bla
-            bla bla. end of quote. thanks for watching dont for like to
-            subscribe.
+            {funfact}
           </p>
         </div>
       </div>
