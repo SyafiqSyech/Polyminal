@@ -2,8 +2,42 @@ import React, { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import shapes from "../shapes.json";
 import { Canvas, useThree } from "@react-three/fiber";
-import { Stars, TrackballControls, useGLTF } from "@react-three/drei";
+import {
+  OrbitControls,
+  Stars,
+  TrackballControls,
+  useGLTF,
+} from "@react-three/drei";
 import { CubeTextureLoader, Mesh, MeshStandardMaterial } from "three";
+
+const Sky = () => {
+  // Loads the skybox texture and applies it to the scene.
+  function SkyBox() {
+    const { scene } = useThree();
+    const loader = new CubeTextureLoader();
+
+    // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
+    const texture = loader.load([
+      "/skybox/right.png",
+      "/skybox/left.png",
+      "/skybox/top.png",
+      "/skybox/bottom.png",
+      "/skybox/front.png",
+      "/skybox/back.png",
+    ]);
+
+    // Set the scene background property to the resulting texture.
+    scene.background = texture;
+    return null;
+  }
+
+  return (
+    <Canvas>
+      <OrbitControls autoRotate={true} />
+      <SkyBox />
+    </Canvas>
+  );
+};
 
 interface ModelProps {
   modelPath: string;
@@ -48,23 +82,6 @@ const Model: React.FC<ModelProps> = (props) => {
 // }
 
 const ShapeDetail = () => {
-  function SkyBox() {
-    const { scene } = useThree();
-    const loader = new CubeTextureLoader();
-    // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
-    const texture = loader.load([
-      "/skybox/right.png",
-      "/skybox/left.png",
-      "/skybox/top.png",
-      "/skybox/bottom.png",
-      "/skybox/front.png",
-      "/skybox/back.png",
-    ]);
-
-    // Set the scene background property to the resulting texture.
-    scene.background = texture;
-    return null;
-  }
   //   const { id } = useParams<{ id: string }>();
   //   const shape = shapes.find((s) => s.id.toString() === id);
 
@@ -79,12 +96,11 @@ const ShapeDetail = () => {
     return <div>Shape not found</div>;
   }
 
-  const { name, model, faces, edges, vertices, symbol, funfact  } = shape;
+  const { name, model, faces, edges, vertices, symbol, funfact } = shape;
 
   function ThreeScene() {
     return (
       <Canvas camera={{ fov: 35, position: [2.5, 2.5, 2.5] }}>
-        <SkyBox />
         <Suspense fallback={null}>
           <TrackballControls
             noZoom={true}
@@ -141,7 +157,10 @@ const ShapeDetail = () => {
   return (
     // Your existing ShapeDetail component code
     // Use the 'shape' object to display details
-    <section className="bg-black">
+    <section className="">
+      <div className="fixed h-screen w-full z-[-2]">
+        <Sky />
+      </div>
       <div className="fixed h-screen w-full z-[2]">
         <ThreeScene />
       </div>

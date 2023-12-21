@@ -1,16 +1,17 @@
 import shapes from "../shapes.json";
 import ShapeCard from "../components/ShapeCard.tsx";
 import { Canvas, useThree } from "@react-three/fiber";
-import { Stars, TrackballControls, useGLTF } from "@react-three/drei";
+import { OrbitControls, Stars, TrackballControls, useGLTF } from "@react-three/drei";
 import { CubeTextureLoader } from "three";
 
-const HeroLogo = () => {
-  // const gltf = useLoader(GLTFLoader, '/model/hexa.gltf')
+const Sky = () => {
 
+  
   // Loads the skybox texture and applies it to the scene.
   function SkyBox() {
     const { scene } = useThree();
     const loader = new CubeTextureLoader();
+
     // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
     const texture = loader.load([
       "/skybox/right.png",
@@ -26,9 +27,18 @@ const HeroLogo = () => {
     return null;
   }
 
+  return(
+    <Canvas>
+      <OrbitControls autoRotate={true}/>
+      <SkyBox/>
+    </Canvas>
+  )
+}
+
+const HeroLogo = () => {
+  // const gltf = useLoader(GLTFLoader, '/model/hexa.gltf')
   return (
     <Canvas camera={{ fov: 35, position: [2, 2, 2] }}>
-      <SkyBox />
       <TrackballControls
         noZoom={true}
         noPan={true}
@@ -56,7 +66,10 @@ const HeroLogo = () => {
 
 const Home = () => {
   return (
-    <div className="bg-black">
+    <div className="">
+      <div className="fixed h-screen w-full z-[-2]">
+        <Sky />
+      </div>
       <div className="fixed h-screen w-full z-[2]">
         <HeroLogo />
       </div>
