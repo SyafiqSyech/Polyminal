@@ -7,14 +7,14 @@ const HeroLogo = () => {
   // const gltf = useLoader(GLTFLoader, '/model/hexa.gltf')
 
   return (
-      <Canvas camera={{ fov: 35, position: [6, 6, 6]}}>
+      <Canvas camera={{ fov: 35, position: [2, 2, 2]}}>
           <TrackballControls noZoom={true} noPan={true} dynamicDampingFactor={.2} rotateSpeed={2}/>
           <mesh>
-            <pointLight position={[10, 8, 6]} intensity={700}/>
-            <pointLight position={[-10, -8, -6]} intensity={700}/>
-            <ambientLight intensity={.3}/>
-            <boxGeometry args={[3, 3, 3]}/>
-            <meshStandardMaterial color='#ef8c5e' roughness={1} metalness={0}/>
+            <directionalLight position={[20, 8, 16]} intensity={6}lookAt={[0, 0, 0]}/>
+            <directionalLight position={[-20, -8, -16]} intensity={6} lookAt={[0, 0, 0]}/>
+            <ambientLight intensity={.1}/>
+            <icosahedronGeometry args={[1, 0]} />
+            <meshStandardMaterial color='orange' roughness={.5} metalness={1}/>
           </mesh>
       </Canvas>
     );

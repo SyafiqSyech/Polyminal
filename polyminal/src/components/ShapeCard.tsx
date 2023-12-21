@@ -23,7 +23,7 @@ const ShapeCard = (props: { data: { id: any; name: any; img: any }; }) => {
             className="group hover:bg-white cursor-pointer w-full notouch" 
             onClick={handleClick}>
             {/* <img className="border border-black p-5" src={`/img/${img}`} alt=""/> */}
-            <h5 className="p-5 pl-96 group-hover:text-black">{name}</h5>
+            <h5 className="p-5 text-center group-hover:text-black">{name}</h5>
         </div>
     )
 }

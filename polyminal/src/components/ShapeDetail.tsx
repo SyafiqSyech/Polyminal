@@ -13,6 +13,8 @@ interface ModelProps {
   };
 }
 
+
+
 const Model: React.FC<ModelProps> = (props) => {
   const { nodes } = useGLTF(props.modelPath);
 
@@ -24,6 +26,7 @@ const Model: React.FC<ModelProps> = (props) => {
     <group>
       <mesh geometry={nodes[props.shapeName].geometry}>
         <meshStandardMaterial
+          roughness={.5} metalness={1}
           attach="material"
           color={props.customColors.mesh}
         />
@@ -64,14 +67,16 @@ const ShapeDetail = () => {
 
   function ThreeScene() {
     return (
-        <Canvas camera={{ position: [2, 2, 2] }}>
+        <Canvas camera={{ fov: 35, position: [2.5, 2.5, 2.5]}}>
             <Suspense fallback={null}>
-                <TrackballControls />
-                <ambientLight />
+                <TrackballControls noZoom={true} noPan={true} dynamicDampingFactor={.2} rotateSpeed={2}/>
+                <directionalLight position={[20, 8, 36]} intensity={6}lookAt={[0, 0, 0]}/>
+                <directionalLight position={[-20, -8, -16]} intensity={6} lookAt={[0, 0, 0]}/>
+                <ambientLight intensity={.3}/>
                 <Model
                     modelPath={`/model/${model}`}
                     shapeName={name}
-                    customColors={{ mesh: 'red' }}
+                    customColors={{ mesh: '#5e5dad' }}
                 />
             </Suspense>
         </Canvas>
@@ -106,9 +111,16 @@ const ShapeDetail = () => {
   return (
     // Your existing ShapeDetail component code
     // Use the 'shape' object to display details
-    <section>
-      <div className="App canvas">
-        <ThreeScene />
+    <section className="bg-black">
+      <div className="fixed h-screen w-full z-[2]">
+        <ThreeScene/>
+      </div>
+      <div className="h-screen relative">
+        <p className="smalltitle titleBlur">{name}</p>
+        <p className="smalltitle">{name}</p>
+        <p className="smalltitle titleBorder z-10 notouch">{name}
+          {/* <div className="titleHover"></div> */}
+        </p>
       </div>
       {/* <div className="grid grid-cols-2 gap-6 p-10"> */}
       <div className="pt-10">
@@ -117,33 +129,20 @@ const ShapeDetail = () => {
           alt={`Image of ${name}`}
           className="border md:he"
         /> */}
-        <div className="flex flex-col justify-center px-10">
-          <h1 className="font-bold flex justify-center">{name}</h1>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p>
-          {/* <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p> */}
+        <div className="h-screen z-10 flex items-center relative pointer-events-none notouch">
+          <div className="grid grid-cols-2 gap-x-5 pl-12">
+            <p>Faces</p>
+            <p>Faces</p>
+            <p>Edges</p>
+            <p>Edges</p>
+            <p>Vertices</p>
+            <p>Vertices</p>
+            <p>Schläfli symbol</p>
+            <p>Schläfli symbol</p>
+          </div>
+        </div>
+        <div className="h-screen w-full flex justify-center items-center">
+          <p className="z-10 h-fit w-[32rem] pointer-events-none text-justify notouch">ini quote keren tentang polyminal yang keren. karena polyminal itu keren. Btw thanks matt udh ngerjain project labnya. Lorem ipsum bla bla bla. end of quote. thanks for watching dont for like to subscribe.</p>
         </div>
       </div>
     </section>
