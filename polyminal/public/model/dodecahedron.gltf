@@ -15,12 +15,12 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Solid.006"
+            "name" : "Dodecahedron"
         }
     ],
     "meshes" : [
         {
-            "name" : "Solid.006",
+            "name" : "Dodecahedron",
             "primitives" : [
                 {
                     "attributes" : {

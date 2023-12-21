@@ -3,20 +3,47 @@ import { useParams } from "react-router-dom";
 import shapes from "../shapes.json";
 import { Canvas } from "@react-three/fiber";
 import { TrackballControls, useGLTF } from "@react-three/drei";
+import { Mesh, MeshStandardMaterial } from 'three';
 
-function Model(props) {
-  const { nodes } = useGLTF(props.modelPath);
-  return (
-      <group {...props} dispose={null}>
-          {nodes && nodes[props.shapeName] && nodes[props.shapeName].geometry && (
-              <mesh
-                  geometry={nodes[props.shapeName].geometry}
-                  material-color={props.customColors.mesh}
-              />
-          )}
-      </group>
-  );
+interface ModelProps {
+  modelPath: string;
+  shapeName: string;
+  customColors: {
+    mesh: string; // Adjust the type according to your needs
+  };
 }
+
+const Model: React.FC<ModelProps> = (props) => {
+  const { nodes } = useGLTF(props.modelPath);
+
+  if (!nodes || !nodes[props.shapeName] || !nodes[props.shapeName].geometry) {
+    return null; // or handle the case where geometry is not available
+  }
+
+  return (
+    <group>
+      <mesh geometry={nodes[props.shapeName].geometry}>
+        <meshStandardMaterial
+          attach="material"
+          color={props.customColors.mesh}
+        />
+      </mesh>
+    </group>
+  );
+};
+
+// function Model(props) {
+//   const { nodes } = useGLTF(props.modelPath);
+//   return (
+//       <group {...props} dispose={null}>
+//           {nodes && nodes[props.shapeName] && nodes[props.shapeName].geometry && (
+//               <mesh
+//                   geometry={nodes[props.shapeName].geometry}
+//                   material={<meshStandardMaterial attach="material" color={props.customColors.mesh} />}              />
+//           )}
+//       </group>
+//   );
+// }
 
 const ShapeDetail = () => {
   //   const { id } = useParams<{ id: string }>();
@@ -40,6 +67,7 @@ const ShapeDetail = () => {
         <Canvas camera={{ position: [2, 2, 2] }}>
             <Suspense fallback={null}>
                 <TrackballControls />
+                <ambientLight />
                 <Model
                     modelPath={`/model/${model}`}
                     shapeName={name}
@@ -82,15 +110,26 @@ const ShapeDetail = () => {
       <div className="App canvas">
         <ThreeScene />
       </div>
-      <div className="grid grid-cols-2 gap-6 p-10">
-        <img
+      {/* <div className="grid grid-cols-2 gap-6 p-10"> */}
+      <div className="pt-10">
+        {/* <img
           src={`/img/${img}`}
           alt={`Image of ${name}`}
           className="border md:he"
-        />
-        <div>
-          <h1 className="font-bold">{name}</h1>
+        /> */}
+        <div className="flex flex-col justify-center px-10">
+          <h1 className="font-bold flex justify-center">{name}</h1>
           <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
+          <p>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
+            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
+            voluptatum!
+          </p>
+          {/* <p>
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
             ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
             voluptatum!
@@ -104,17 +143,7 @@ const ShapeDetail = () => {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
             ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
             voluptatum!
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p>
-          <p>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus
-            ipsum rerum facilis sit a fugit, voluptatem iste quasi quisquam
-            voluptatum!
-          </p>
+          </p> */}
         </div>
       </div>
     </section>
