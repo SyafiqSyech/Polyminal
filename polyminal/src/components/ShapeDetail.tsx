@@ -1,9 +1,9 @@
 import React, { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import shapes from "../shapes.json";
-import { Canvas } from "@react-three/fiber";
-import { TrackballControls, useGLTF } from "@react-three/drei";
-import { Mesh, MeshStandardMaterial } from 'three';
+import { Canvas, useThree } from "@react-three/fiber";
+import { Stars, TrackballControls, useGLTF } from "@react-three/drei";
+import { CubeTextureLoader, Mesh, MeshStandardMaterial } from "three";
 
 interface ModelProps {
   modelPath: string;
@@ -12,8 +12,6 @@ interface ModelProps {
     mesh: string; // Adjust the type according to your needs
   };
 }
-
-
 
 const Model: React.FC<ModelProps> = (props) => {
   const { nodes } = useGLTF(props.modelPath);
@@ -26,7 +24,8 @@ const Model: React.FC<ModelProps> = (props) => {
     <group>
       <mesh geometry={nodes[props.shapeName].geometry}>
         <meshStandardMaterial
-          roughness={.5} metalness={1}
+          roughness={0.5}
+          metalness={1}
           attach="material"
           color={props.customColors.mesh}
         />
@@ -49,6 +48,23 @@ const Model: React.FC<ModelProps> = (props) => {
 // }
 
 const ShapeDetail = () => {
+  function SkyBox() {
+    const { scene } = useThree();
+    const loader = new CubeTextureLoader();
+    // The CubeTextureLoader load method takes an array of urls representing all 6 sides of the cube.
+    const texture = loader.load([
+      "/skybox/right.png",
+      "/skybox/left.png",
+      "/skybox/top.png",
+      "/skybox/bottom.png",
+      "/skybox/front.png",
+      "/skybox/back.png",
+    ]);
+
+    // Set the scene background property to the resulting texture.
+    scene.background = texture;
+    return null;
+  }
   //   const { id } = useParams<{ id: string }>();
   //   const shape = shapes.find((s) => s.id.toString() === id);
 
@@ -67,19 +83,33 @@ const ShapeDetail = () => {
 
   function ThreeScene() {
     return (
-        <Canvas camera={{ fov: 35, position: [2.5, 2.5, 2.5]}}>
-            <Suspense fallback={null}>
-                <TrackballControls noZoom={true} noPan={true} dynamicDampingFactor={.2} rotateSpeed={2}/>
-                <directionalLight position={[20, 8, 36]} intensity={6}lookAt={[0, 0, 0]}/>
-                <directionalLight position={[-20, -8, -16]} intensity={6} lookAt={[0, 0, 0]}/>
-                <ambientLight intensity={.3}/>
-                <Model
-                    modelPath={`/model/${model}`}
-                    shapeName={name}
-                    customColors={{ mesh: '#5e5dad' }}
-                />
-            </Suspense>
-        </Canvas>
+      <Canvas camera={{ fov: 35, position: [2.5, 2.5, 2.5] }}>
+        <SkyBox />
+        <Suspense fallback={null}>
+          <TrackballControls
+            noZoom={true}
+            noPan={true}
+            dynamicDampingFactor={0.2}
+            rotateSpeed={2}
+          />
+          <directionalLight
+            position={[20, 8, 36]}
+            intensity={6}
+            lookAt={[0, 0, 0]}
+          />
+          <directionalLight
+            position={[-20, -8, -16]}
+            intensity={6}
+            lookAt={[0, 0, 0]}
+          />
+          <ambientLight intensity={0.3} />
+          <Model
+            modelPath={`/model/${model}`}
+            shapeName={name}
+            customColors={{ mesh: "#5e5dad" }}
+          />
+        </Suspense>
+      </Canvas>
     );
   }
 
@@ -113,12 +143,13 @@ const ShapeDetail = () => {
     // Use the 'shape' object to display details
     <section className="bg-black">
       <div className="fixed h-screen w-full z-[2]">
-        <ThreeScene/>
+        <ThreeScene />
       </div>
       <div className="h-screen relative">
         <p className="smalltitle titleBlur">{name}</p>
         <p className="smalltitle">{name}</p>
-        <p className="smalltitle titleBorder z-10 notouch">{name}
+        <p className="smalltitle titleBorder z-10 notouch">
+          {name}
           {/* <div className="titleHover"></div> */}
         </p>
       </div>
@@ -142,7 +173,12 @@ const ShapeDetail = () => {
           </div>
         </div>
         <div className="h-screen w-full flex justify-center items-center">
-          <p className="z-10 h-fit w-[32rem] pointer-events-none text-justify notouch">ini quote keren tentang polyminal yang keren. karena polyminal itu keren. Btw thanks matt udh ngerjain project labnya. Lorem ipsum bla bla bla. end of quote. thanks for watching dont for like to subscribe.</p>
+          <p className="z-10 h-fit w-[32rem] pointer-events-none text-justify notouch">
+            ini quote keren tentang polyminal yang keren. karena polyminal itu
+            keren. Btw thanks matt udh ngerjain project labnya. Lorem ipsum bla
+            bla bla. end of quote. thanks for watching dont for like to
+            subscribe.
+          </p>
         </div>
       </div>
     </section>
