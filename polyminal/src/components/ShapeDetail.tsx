@@ -1,10 +1,10 @@
-import React, { Suspense } from "react";
+import { Suspense } from "react";
 import { useParams } from "react-router-dom";
 import shapes from "../shapes.json";
 import { Canvas } from "@react-three/fiber";
 import { TrackballControls, useGLTF } from "@react-three/drei";
 
-function Model(props) {
+const Model = (props: { modelPath: any; shapeName: any; customColors: any }) => {
   const { nodes } = useGLTF(props.modelPath);
   return (
       <group {...props} dispose={null}>
@@ -76,8 +76,6 @@ const ShapeDetail = () => {
   // }
 
   return (
-    // Your existing ShapeDetail component code
-    // Use the 'shape' object to display details
     <section>
       <div className="App canvas">
         <ThreeScene />

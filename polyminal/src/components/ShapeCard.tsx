@@ -1,4 +1,3 @@
-import React from 'react'
 import { useNavigate } from 'react-router-dom';
 
 // function ShapeCard() {
@@ -21,12 +20,10 @@ const ShapeCard = (props: { data: { id: any; name: any; img: any }; }) => {
 
     return (
         <div 
-            className="bg-slate-600 shadow-2xl rounded-lg justify-item-center p-5 cursor-pointer" 
-            // key={id}
-            // () => {window.location.href='/ShapeDetail'}
+            className="group hover:bg-white cursor-pointer w-full notouch" 
             onClick={handleClick}>
-            <img className="border border-black p-5" src={`/img/${img}`} alt="" />
-            <h5 className="p-3 text-xl font-bold flex justify-center">{name}</h5>
+            {/* <img className="border border-black p-5" src={`/img/${img}`} alt=""/> */}
+            <h5 className="p-5 pl-96 group-hover:text-black">{name}</h5>
         </div>
     )
 }
