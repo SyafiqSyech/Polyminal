@@ -7,7 +7,7 @@ import {
   createBrowserRouter,
   RouterProvider,
 } from "react-router-dom";
-import ShapeDetail from './components/ShapeDetail.tsx';
+import ShapeDetail from './pages/ShapeDetail.tsx';
 
 const router = createBrowserRouter([
   {

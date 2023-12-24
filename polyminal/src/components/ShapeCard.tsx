@@ -1,29 +1,79 @@
+import { motion } from 'framer-motion';
 import { useNavigate } from 'react-router-dom';
 
-// function ShapeCard() {
-//   return (
-//     // <div>shapeCard</div>
-//     <div className="shadow-lg rounded-lg justify-item-center p-5" key={shape.id}>
-//       {/* <img className="border border-black p-5" src="./img/cone.jpeg" alt="" /> */}
-//       <h5 className="p-3 text-xl font-bold flex justify-center">{shape.name}</h5>
-//     </div>
-//   )
-// }
 
 const ShapeCard = (props: { data: { id: any; name: any; img: any }; }) => {
-    const {id, name, img} = props.data;
+    const { id, name } = props.data;
     const navigate = useNavigate();
 
     const handleClick = () => {
         navigate(`/ShapeDetail/${id}`);
-      };
+    };
+
+    const textState = {
+        rest: {
+            color: "#FFFFFF",
+            transition: {
+            duration: .2,
+            }
+        },
+        hover: {
+            color: "#000000",
+            transition: {
+            duration: .2,
+            }
+        }
+    }
+    
+    const bgState = {
+        rest: {
+            scaleY: 0,
+            scaleX: 1,
+            transition: {
+            duration: .2,
+            }
+        },
+        hover: {
+            scaleY: 1,
+            scaleX: 1,
+            transition: {
+                duration: .2,
+            }
+        }
+    }
+    
+    const boxState = {
+        rest: {
+            width: "90%",
+            height: "90%",
+            transition: {
+                duration: .2,
+            }
+        },
+        hover: {
+            width: "100%",
+            height: "100%",
+            transition: {
+                duration: .2,
+            }
+        }
+    }
 
     return (
-        <div 
-            className="group hover:bg-white cursor-pointer w-full notouch" 
-            onClick={handleClick}>
-            {/* <img className="border border-black p-5" src={`/img/${img}`} alt=""/> */}
-            <h5 className="p-5 text-center group-hover:text-black">{name}</h5>
+        <div className="w-1/4 aspect-square flex justify-center items-center">
+            <motion.div 
+                className="h-5/6 w-5/6 z-10 relative flex justify-center items-center cursor-pointer
+                border-solid border-white border-2"
+                initial="rest"
+                whileHover="hover"
+                animate="rest"
+                variants={boxState}
+                onClick={handleClick}
+            >
+                {/* <motion.div va className=""></motion.div> */}
+                <motion.h5 variants={textState} className="z-[12] relative p-5 text-center notouch pointer-events-none">{name}</motion.h5>
+                <motion.div variants={bgState} className="absolute top-0 left-0 z-[11] h-full w-full bg-white"></motion.div>
+            </motion.div>
         </div>
     )
 }

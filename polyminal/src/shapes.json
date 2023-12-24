@@ -1,79 +1,470 @@
 [
     {
-        "id" : 1,
-        "name" : "Torus",
-        "img" : "torus.png",
-        "model" : "torus.gltf",
-        "funfact" : "The torus is a geometric shape resembling a donut with a hole in the center. It emerges from the rotation of a circle around an axis outside its plane. This doughnut-like form showcases a continuous, unbroken surface, embodying notions of wholeness and cyclicality in its elegant design.",
-        "symbol" : "-",
-        "faces" : "infinite",
-        "edges" : "infinite",
-        "vertices" : "infinite"
-    },
-    {
-        "id" : 2,
-        "name" : "Cone",
-        "img" : "cone.jpeg",
-        "model" : "cone.gltf",
-        "funfact" : "The cone is a three-dimensional geometric figure characterized by a flat circular base and a pointed apex. Its tapered structure symbolizes ascension and convergence, as lines extending from the apex to the base create a sense of directionality. Cones often embody notions of growth, reaching towards a pinnacle or singularity in their geometry.",
-        "symbol" : "-",
-        "faces" : 2,
-        "edges" : "infinite",
-        "vertices" : 1 
-    },
-    {
         "id" : 3,
-        "name" : "Dodecahedron",
+        "name" : "Regular Dodecahedron",
+        "model" : "Dodecahedron",
+        "color" : "#cdb9d2",
         "img" : "dodecahedron.jpeg",
-        "model" : "dodecahedron.gltf",
-        "funfact" : "The dodecahedron features twelve regular pentagonal faces, symbolizing completeness and cosmic order. Its intricate design suggests a profound connection to mathematical beauty and the inherent structure of the universe.",
-        "symbol" : "{5, 3}",
-        "faces" : 12,
-        "edges" : 30,
-        "vertices" : 20
+        "names" : "apa, apa, apa",
+        "elements" : "F: 12, E: 30, V: 20",
+        "schlafli" : "{5, 3}",
+        "wyhoff" : "3 | 2 5",
+        "facesbysides" : "12{5}",
+        "vertexfig" : "5.5.5",
+        "angle" : "116.56505°",
+        "references" : "U-23, C-26, W-5",
+        "conway" : "D",
+        "funfact" : [
+            {
+                "title" : "Donut",
+                "content" : "The dodecahedron features twelve regular pentagonal faces, symbolizing completeness and cosmic order. Its intricate design suggests a profound connection to mathematical beauty and the inherent structure of the universe."
+            }, 
+            {
+                "title" : "History",
+                "content" : "Regular dodecahedral objects have found some practical applications, and have also played a role in the visual arts and in philosophy."
+            },
+            {
+                "title" : "In Nature and Supramolecules",
+                "content" : "The fossil coccolithophore Braarudosphaera bigelowii (see figure), a unicellular coastal phytoplanktonic alga, has a calcium carbonate shell with a regular dodecahedral structure about 10 micrometers across."
+            }, 
+            {
+                "title" : "Shape Of The Universe",
+                "content" : "Various models have been proposed for the global geometry of the universe. In addition to the primitive geometries, these proposals include the Poincaré dodecahedral space, a positively curved space consisting of a regular dodecahedron whose opposite faces correspond (with a small twist). This was proposed by Jean-Pierre Luminet and colleagues in 2003, and an optimal orientation on the sky for the model was estimated in 2008."
+            }
+        ]
     },
     {
         "id" : 4,
         "name" : "Tetrahedron",
+        "model" : "Tetrahedron",
+        "color" : "#cdb9d2",
         "img" : "tetrahedron.jpeg",
-        "model" : "tetra.gltf",
-        "funfact" : "The tetrahedron is the simplest of the Platonic solids, characterized by four equilateral triangular faces meeting at each vertex. Its symmetrical nature reflects balance and unity, making it a fundamental geometric form.",
-        "symbol" : "{3, 3}",
-        "faces" : 4,
-        "edges" : 6,
-        "vertices" : 4 
+        "names" : "apa, apa, apa",
+        "elements" : "F: 4, E: 6, V: 4,",
+        "schlafli" : "{3, 3}",
+        "wyhoff" : "3 2 | 3",
+        "facesbysides" : "4{3}",
+        "vertexfig" : "3.3.3",
+        "angle" : "70.528779°",
+        "references" : "U-01, C-15, W-1",
+        "conway" : "T",
+        "funfact" : [
+            {
+                "title" : "Simplest Platonic Solids",
+                "content" : "The tetrahedron is the simplest of the Platonic solids, characterized by four equilateral triangular faces meeting at each vertex. Its symmetrical nature reflects balance and unity, making it a fundamental geometric form."
+            }, 
+            {
+                "title" : "Aviation",
+                "content" : "At some airfields, a large frame in the shape of a tetrahedron with two sides covered with a thin material is mounted on a rotating pivot and always points into the wind. It is built big enough to be seen from the air and is sometimes illuminated. Its purpose is to serve as a reference to pilots indicating wind direction."
+            },
+            {
+                "title" : "Chemistry",
+                "content" : "Water, H2O, also has a tetrahedral structure, with two hydrogen atoms and two lone pairs of electrons around the central oxygen atoms. Its tetrahedral symmetry is not perfect, however, because the lone pairs repel more than the single O–H bonds."
+            }, 
+            {
+                "title" : "Electricity",
+                "content" : "If six equal resistors are soldered together to form a tetrahedron, then the resistance measured between any two vertices is half that of one resistor."
+            },
+            {
+                "title" : "Color Space",
+                "content" : "Tetrahedra are used in color space conversion algorithms specifically for cases in which the luminance axis diagonally segments the color space (e.g. RGB, CMY)."
+            }, 
+            {
+                "title" : "Games",
+                "content" : "The Royal Game of Ur, dating from 2600 BC, was played with a set of tetrahedral dice. Especially in roleplaying, this solid is known as a 4-sided die, one of the more common polyhedral dice, with the number rolled appearing around the bottom or on the top vertex. Some Rubik's Cube-like puzzles are tetrahedral, such as the Pyraminx and Pyramorphix."
+            },
+            {
+                "title" : "Geology",
+                "content" : "The tetrahedral hypothesis, originally published by William Lowthian Green to explain the formation of the Earth,[39] was popular through the early 20th century."
+            }
+        ]
     },
     {
         "id" : 5,
-        "name" : "Icosahedron",
+        "name" : "Regular Icosahedron",
+        "model" : "Icosahedron",
+        "color" : "#cdb9d2",
         "img" : "icosahedron.jpeg",
-        "model" : "icosa.gltf",
-        "funfact" : "Defined by twenty equilateral triangular faces, the icosahedron demonstrates a dynamic and fluid geometry. Its twenty vertices contribute to its versatility, representing the interconnectedness and adaptability found in natural forms.",
-        "symbol" : "{3, 5}",
-        "faces" : 20,
-        "edges" : 30,
-        "vertices" : 12 
+        "names" : "apa, apa, apa",
+        "elements" : "F: 20, E: 30, V: 12,",
+        "schlafli" : "{3, 5}",
+        "wyhoff" : "5 | 2 3",
+        "facesbysides" : "20{3}",
+        "vertexfig" : "3.3.3.3.3",
+        "angle" : "138.189685°",
+        "references" : "U-22, C-25, W-4",
+        "conway" : "I",
+        "funfact" : [
+            {
+                "title" : "Dynamic and Fluid Geometry",
+                "content" : "Defined by twenty equilateral triangular faces, the icosahedron demonstrates a dynamic and fluid geometry. Its twenty vertices contribute to its versatility, representing the interconnectedness and adaptability found in natural forms."
+            },
+            {
+                "title" : "Biology",
+                "content" : "Many viruses, e.g. herpes virus, have icosahedral shells. Viral structures are built of repeated identical protein subunits known as capsomeres, and the icosahedron is the easiest shape to assemble using these subunits. A regular polyhedron is used because it can be built from a single basic unit protein used over and over again; this saves space in the viral genome."
+            },
+            {
+                "title" : "Chemistry",
+                "content" : "The closo-carboranes are chemical compounds with shape very close to icosahedron. Icosahedral twinning also occurs in crystals, especially nanoparticles."
+            }
+        ]
     },
     {
         "id" : 6,
         "name" : "Octahedron",
+        "model" : "Octahedron",
+        "color" : "#cdb9d2",
         "img" : "octahedron.jpeg",
-        "model" : "octa.gltf",
-        "funfact" : "Comprising eight equilateral triangular faces meeting at each vertex, the octahedron embodies symmetry and harmony. Its name stems from the Greek word \"octa,\" highlighting its eight-fold symmetry and balanced structure.",
-        "symbol" : "{3, 4}",
-        "faces" : 8,
-        "edges" : 12,
-        "vertices" : 6
+        "names" : "apa, apa, apa",
+        "elements" : "F: 8, E: 12, V: 6",
+        "schlafli" : "{3, 4}",
+        "wyhoff" : "4 | 2 3",
+        "facesbysides" : "8{3}",
+        "vertexfig" : "3.3.3.3",
+        "angle" : "109.47122°",
+        "references" : "U-05, C-17, W-2",
+        "conway" : "O",
+        "funfact" : [
+            {
+                "title" : "Octahedron Harmony",
+                "content" : "Comprising eight equilateral triangular faces meeting at each vertex, the octahedron embodies symmetry and harmony. Its name stems from the Greek word \"octa,\" highlighting its eight-fold symmetry and balanced structure."
+            }
+        ]
     },
     {
         "id" : 7,
-        "name" : "Hexahedron",
+        "name" : "Regular Hexahedron",
+        "model" : "Hexahedron",
+        "color" : "#cdb9d2",
         "img" : "octahedron.jpeg",
-        "model" : "hexa.gltf",
-        "funfact" : "The cube, or hexahedron, boasts six equal square faces, forming right angles at their intersections. Renowned for its stability and regularity, the cube represents solidity and order within its geometric composition.",
-        "symbol" : "{4, 3}",
-        "faces" : 6,
-        "edges" : 12,
-        "vertices" : 8
+        "names" : "apa, apa, apa",
+        "elements" : "F: 6, E: 12, V: 8",
+        "schlafli" : "{4, 3}",
+        "wyhoff" : "3 | 2 4",
+        "facesbysides" : "6{4}",
+        "vertexfig" : "4.4.4",
+        "angle" : "90°",
+        "references" : "U-06, C-18, W-3",
+        "conway" : "C",
+        "funfact" : [
+            {
+                "title" : "Cube's Solidty and Order",
+                "content" : "The cube, or hexahedron, boasts six equal square faces, forming right angles at their intersections. Renowned for its stability and regularity, the cube represents solidity and order within its geometric composition."
+            }
+        ]
+    },
+    {
+        "id" : 8,
+        "name" : "Truncated Tetrahedron",
+        "model" : "Truncated Tetrahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 8, E: 18, V: 12",
+        "schlafli" : "t{3, 3}",
+        "wyhoff" : "2 3 | 3",
+        "facesbysides" : "4{3}+4{6}",
+        "vertexfig" : "3.6.6",
+        "angle" : "3-6: 109°28′16″, 6-6: 70°31′44″",
+        "references" : "U-02, C-16, W-6",
+        "conway" : "tT",
+        "funfact" : [
+            {
+                "title" : "Perfectly Filled Space",
+                "content" : "If you were to assemble 4 truncated tetrahedra around a common vertex, they would perfectly fill the space around it."
+            },
+            {
+                "title" : "Expo 67",
+                "content" : "Giant truncated tetrahedra were used for the \"Man the Explorer\" and \"Man the Producer\" theme pavilions in Expo 67. They were made of massive girders of steel bolted together in a geometric lattice. The truncated tetrahedra were interconnected with lattice steel platforms. All of these buildings were demolished after the end of Expo 67, as they had not been built to withstand the severity of the Montreal weather over the years. Their only remnants are in the Montreal city archives, the Public Archives Of Canada and the photo collections of tourists of the times."
+            }
+        ]
+    },
+    {
+        "id" : 9,
+        "name" : "Cuboctahedron",
+        "model" : "Cuboctahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 14, E: 24, V: 12",
+        "schlafli" : "r{4, 3}",
+        "wyhoff" : "2 | 3 4",
+        "facesbysides" : "8{3}+6{4}",
+        "vertexfig" : "3.4.3.4",
+        "angle" : "125.26°",
+        "references" : "U-07, C-19, W-11",
+        "conway" : "aC",
+        "funfact" : [
+            {
+                "title" : "Rectified Cube",
+                "content" : "The cuboctahedron has the interesting property of being a rectified cube, meaning its vertices lie at the midpoints of the edges of a cube."
+            }
+        ]
+    },
+    {
+        "id" : 10,
+        "name" : "Truncated Cube",
+        "model" : "Truncated Cube",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 14, E: 36, V: 24",
+        "schlafli" : "t{4, 3}",
+        "wyhoff" : "2 3 | 4",
+        "facesbysides" : "8{3}+6{8}",
+        "vertexfig" : "3.8.8",
+        "angle" : "3-8: 125°15′51″, 8-8: 90°",
+        "references" : "U-09, C-21, W-8",
+        "conway" : "tC",
+        "funfact" : [
+            {
+                "title" : "Snub Cube Brother",
+                "content" : "The truncated cube is also known as the \"snub cube,\" and its shape can be obtained by truncating each vertex of a cube at a certain distance."
+            }
+        ]
+    },
+    {
+        "id" : 11,
+        "name" : "Truncated Octahedron",
+        "model" : "Truncated Octahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 14, E: 36, V: 24",
+        "schlafli" : "t{3, 4}",
+        "wyhoff" : "2 4 | 3",
+        "facesbysides" : "6{4}+8{6}",
+        "vertexfig" : "4.6.6",
+        "angle" : "125°15′51″, 109°28′16″",
+        "references" : "U-08 C-20, W-7",
+        "conway" : "tO",
+        "funfact" : [
+            {
+                "title" : "Regular/Truncated?",
+                "content" : "If you connect the midpoints of the edges of a regular octahedron, you get a truncated octahedron."
+            },
+            {
+                "title" : "Chemistry",
+                "content" : "The truncated octahedron exists in the structure of the faujasite crystals."
+            }
+        ]
+    },
+    {
+        "id" : 12,
+        "name" : "Rhombicuboctahedron",
+        "model" : "Rhombicuboctahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 26, E: 48, V: 24",
+        "schlafli" : "rr{4, 3}",
+        "wyhoff" : "3 4 | 2",
+        "facesbysides" : "8{3}+(6+12){4}",
+        "vertexfig" : "3.4.4.4",
+        "angle" : "3-4: 144.74°, 4-4: 135°",
+        "references" : "U-10, C-22, W-13",
+        "conway" : "eC",
+        "funfact" : [
+            {
+                "title" : "Zonohedron",
+                "content" : "This polyhedron has 26 faces and 48 vertices, making it one of the more complex Archimedean solids. It is also a zonohedron, meaning its faces are all parallelograms."
+            },
+            {
+                "title" : "In The Arts",
+                "content" : "The 1495 Portrait of Luca Pacioli, traditionally attributed to Jacopo de' Barbari, includes a glass rhombicuboctahedron half-filled with water, which may have been painted by Leonardo da Vinci. The first printed version of the rhombicuboctahedron was by Leonardo and appeared in Pacioli's Divina proportione (1509)."
+            }, 
+            {
+                "title" : "Appearance In Games",
+                "content" : "The \"Hurry-Scurry Galaxy\" and \"Sea Slide Galaxy\" in the videogame Super Mario Galaxy have planets in the similar shape of a rhombicuboctahedron."
+            }
+        ]
+    },
+    {
+        "id" : 13,
+        "name" : "Truncated Cuboctahedron",
+        "model" : "Truncated Cuboctahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 26, E: 72, V: 48",
+        "schlafli" : "tr{4, 3}",
+        "wyhoff" : "2 3 4 |",
+        "facesbysides" : "12{4}+8{6}+6{8}",
+        "vertexfig" : "4.6.8",
+        "angle" : "144°44′08″, 135°, 125°15′51″",
+        "references" : "U-11, C-23, W-15",
+        "conway" : "bC",
+        "funfact" : [
+            {
+                "title" : "Cuboctahedron and Rhombicuboctahedron relevance",
+                "content" : "It can be created by truncating the vertices of a cuboctahedron at a certain distance. Its dual is the rhombicuboctahedron."
+            }
+        ]
+    },
+    {
+        "id" : 14,
+        "name" : "Snub Cube",
+        "model" : "Snub Cube",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 38, E: 60, V: 24",
+        "schlafli" : "sr{4, 3}",
+        "wyhoff" : "2 3 4 |",
+        "facesbysides" : "(8+24){3}+6{4}",
+        "vertexfig" : "3.3.3.3.4",
+        "angle" : "3-3: 153°14′04″, 3-4: 142°59′00″",
+        "references" : "U-12, C-24, W-17",
+        "conway" : "sC",
+        "funfact" : [
+            {
+                "title" : "Truncation or Rectification alone? No can't do!",
+                "content" : "The snub cube is one of the few Archimedean solids that cannot be constructed by truncation or rectification alone. It requires a more complex process, involving both."
+            }
+        ]
+    },
+    {
+        "id" : 15,
+        "name" : "Icosidodecahedron",
+        "model" : "Icosidodecahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 32, E: 60, V: 30",
+        "schlafli" : "r{5, 3}",
+        "wyhoff" : "2 | 3 5",
+        "facesbysides" : "20{3}+12{5}",
+        "vertexfig" : "3.5.3.5",
+        "angle" : "142.62°",
+        "references" : "U-24, C-28, W-12",
+        "conway" : "aD",
+        "funfact" : [
+            {
+                "title" : "Icosidodecahedra In Nature",
+                "content" : "Icosidodecahedra can be found in all eukaryotic cells, including human cells, as Sec13/31 COPII coat-protein formations."
+            },
+            {
+                "title" : "Star Trek Trivia",
+                "content" : "In Star Trek Universe, the Vulcan game of logic Kal-Toh has the goal to create a holographic icosidodecahedron."
+            }
+        ]
+    },
+    {
+        "id" : 16,
+        "name" : "Truncated Dodecahedron",
+        "model" : "Truncated Dodecahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 32, E: 90, V: 64",
+        "schlafli" : "t{5, 3}",
+        "wyhoff" : "2 3 | 5",
+        "facesbysides" : "20{3}+12{10}",
+        "vertexfig" : "3.10.10",
+        "angle" : "10-10: 116.57°, 3-10: 142.62°",
+        "references" : "U-26, C-29, W-10",
+        "conway" : "tD",
+        "funfact" : [
+            {
+                "title" : "Similarity With Others",
+                "content" : "The truncated dodecahedron is a stellation of the dodecahedron, and it shares the same symmetry group as the icosahedron."
+            }
+        ]
+    },
+    {
+        "id" : 17,
+        "name" : "Truncated Icosahedron",
+        "model" : "Truncated Icosahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 32, E: 90, V: 60",
+        "schlafli" : "t{3, 3}",
+        "wyhoff" : "2 5 | 3",
+        "facesbysides" : "12{5}+20{6}",
+        "vertexfig" : "5.6.6",
+        "angle" : "6-6: 138.189685°, 6-5: 142.62°",
+        "references" : "U-25, C-27, W-9",
+        "conway" : "tI",
+        "funfact" : [
+            {
+                "title" : "Soccer Ball Pattern",
+                "content" : "This polyhedron has 12 regular pentagonal faces and is famous for its use as a soccer ball pattern, known as a truncated icosahedron or buckyball."
+            },
+            {
+                "title" : "History",
+                "content" : "The truncated icosahedron was known to Archimedes, who classified the 13 Archimedean solids in a lost work. All we know of his work on these shapes comes from Pappus of Alexandria, who merely lists the numbers of faces for each: 12 pentagons and 20 hexagons, in the case of the truncated icosahedron. The first known image and complete description of a truncated icosahedron is from a rediscovery by Piero della Francesca, in his 15th-century book De quinque corporibus regularibus, which included five of the Archimedean solids (the five truncations of the regular polyhedra)."
+            }
+        ]
+    },
+    {
+        "id" : 18,
+        "name" : "Rhombicosidodecahedron",
+        "model" : "Rhombicosidodecahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 62, E: 120, V: 64",
+        "schlafli" : "rr{5, 3}",
+        "wyhoff" : "3 5 | 2",
+        "facesbysides" : "20{3}+30{4}+12{5}",
+        "vertexfig" : "3.4.5.4",
+        "angle" : "3-4: 159°05′41″, 4-5: 148°16′57″",
+        "references" : "U-27, C-30, W-14",
+        "conway" : "eD",
+        "funfact" : [
+            {
+                "title" : "Reflection",
+                "content" : "The name of this polyhedron reflects its structure: it has 30 rhombic faces and 12 regular pentagonal faces, combining the features of the rhombicuboctahedron and the icosidodecahedron."
+            }
+        ]
+    },
+    {
+        "id" : 19,
+        "name" : "Truncated Icosidodecahedron",
+        "model" : "Truncated Icosidodecahedron",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 62, E: 180, V: 120",
+        "schlafli" : "tr{5, 3}",
+        "wyhoff" : "2 3 5 |",
+        "facesbysides" : "30{4}+20{6}+12{10}",
+        "vertexfig" : "4.6.10",
+        "angle" : "6-10: 142.62°, 4-10: 148.28°, 4-6: 159.095°",
+        "references" : "U-28, C-31, W-16",
+        "conway" : "bD",
+        "funfact" : [
+            {
+                "title" : "I'am what my brothers are!",
+                "content" : "This polyhedron is a combination of a truncated dodecahedron and a truncated icosahedron, resulting in a shape with 62 faces."
+            },
+            {
+                "title" : "The Names",
+                "content" : "The name truncated icosidodecahedron, given originally by Johannes Kepler, is misleading. An actual truncation of an icosidodecahedron has rectangles instead of squares. This nonuniform polyhedron is topologically equivalent to the Archimedean solid."
+            }
+        ]
+    },
+    {
+        "id" : 20,
+        "name" : "Snub Dodecahedron",
+        "model" : "octa.gltf",
+        "color" : "#cdb9d2",
+        "img" : "octahedron.jpeg",
+        "names" : "apa, apa, apa",
+        "elements" : "F: 92, E: 150, V: 60",
+        "schlafli" : "sr{5, 3}",
+        "wyhoff" : "| 2 3 5",
+        "facesbysides" : "(20+60){3}+12{5}",
+        "vertexfig" : "3.3.3.3.5",
+        "angle" : "3-3: 164°10′31″, 3-5: 152°55′53″",
+        "references" : "U-29, C-32, W-18",
+        "conway" : "sD",
+        "funfact" : [
+            {
+                "title" : "Snub Dodecahedral Graph",
+                "content" : "In the mathematical field of graph theory, a snub dodecahedral graph is the graph of vertices and edges of the snub dodecahedron, one of the Archimedean solids. It has 60 vertices and 150 edges, and is an Archimedean graph."
+            }
+        ]
     }
 ]
