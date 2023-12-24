@@ -22,9 +22,7 @@ const Home = () => {
         </div>
         <div className="h-screen w-full flex justify-center items-center">
           <p className="z-10 h-fit w-96 pointer-events-none text-justify notouch">
-            ini quote keren tentang polyminal yang keren. karena polyminal itu
-            keren. Btw thanks matt udh ngerjain project labnya. Lorem ipsum bla
-            bla bla. end of quote. thanks for watching dont for like to subscribe.
+          Welcome to Polyminal, where mathematics meets the wonders of shape! Explore regular and Archimedean solids in all their 3D beauty, while diving into interesting facts and curiosities at every turn. We believe that behind every shape lies a story, and within every fun fact, there's a mathematical marvel waiting to be uncovered. Together, let's journey, learn, and celebrate the boundless beauty of geometry!
           </p>
         </div>
       </div>
